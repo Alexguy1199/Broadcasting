@@ -1,16 +1,9 @@
 import os
 import asyncio
 from telethon import TelegramClient, events, Button
+from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID, DELAY
 from database import db
-from dotenv import load_dotenv
 
-load_dotenv()
-
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-OWNER_ID = int(os.getenv("OWNER_ID"))
-DELAY = 0.5  # seconds between each message to avoid flood
 
 client = TelegramClient("bot", API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
